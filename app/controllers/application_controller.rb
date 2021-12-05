@@ -1,9 +1,14 @@
-class ApplicationController < ActionController::Base
-    before_action :configure_permitted_parameters, if: :devise_controller?
+class UsersController < ApplicationController
 
-    protected
-        def configure_permitted_parameters
-            devise_parameter_sanitizer.permit :sign_up, keys: [:name, :age]
-            devise_parameter_sanitizer.permit :account_update, keys: [:name, :age]
-        end
-end
+    def show
+        @user = current_user
+    end
+  
+    def edit
+      @@ -18,6 +19,6 @@ def update
+    private
+  
+    def user_params
+      params.require(:user).permit(:name, :age, :avatar)
+    end
+  end
