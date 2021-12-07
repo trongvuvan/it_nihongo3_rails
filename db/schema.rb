@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_12_07_024743) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "books", force: :cascade do |t|
+   create_table "books", force: :cascade do |t|
     t.string "title"
     t.integer "number_of_pages"
     t.datetime "created_at", precision: 6, null: false
